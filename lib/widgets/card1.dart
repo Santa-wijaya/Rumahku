@@ -45,11 +45,11 @@ class Card1 extends StatelessWidget {
                               bottomLeft: Radius.circular(36),
                             ),
                           ),
-                          child: Center(
-                            child: Image.asset(
-                              'assets/icons/icon_star.png',
-                              width: 22,
-                              height: 22,
+                          child: const Center(
+                            child: Icon(
+                              Icons.favorite,
+                              size: 22,
+                              color: ColorPalette.secondaryColor,
                             ),
                           ),
                         ),

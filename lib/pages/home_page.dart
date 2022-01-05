@@ -17,6 +17,7 @@ class HomePage extends StatelessWidget {
             vertical: edge,
           ),
           child: ListView(
+            // Noted : Title/Head
             children: [
               Padding(
                 padding: EdgeInsets.only(left: edge),
@@ -49,6 +50,7 @@ class HomePage extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
+              // Note : Popular Cities
               Padding(
                 padding: EdgeInsets.only(left: edge),
                 child: Text(
@@ -101,7 +103,24 @@ class HomePage extends StatelessWidget {
                     ), // card 1), // card 3
                   ],
                 ),
-              )
+              ),
+              // Noted : Recomended Space --
+              const SizedBox(
+                height: 30,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: edge),
+                child: Text(
+                  'Recommended Space',
+                  style: GoogleFonts.poppins(
+                    textStyle: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      // color: ColorPalette.greyColor,
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
