@@ -68,3 +68,6 @@ class ColorPalette {
     900: Color(0xFF000000), //100%
   });
 }
+
+//minor
+double edge = 24;

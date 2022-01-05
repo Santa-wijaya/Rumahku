@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ppp/c_color.dart';
+import 'package:ppp/pages/home_page.dart';
 
 class Splashscreen extends StatelessWidget {
   const Splashscreen({Key? key}) : super(key: key);
@@ -11,72 +12,88 @@ class Splashscreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.only(
-            top: 50,
-            left: 30,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                height: 50,
-                width: 50,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/logo/main_logo.png'),
-                  ),
-                ),
+        bottom: false,
+        child: Stack(
+          children: [
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Image.asset('assets/images/explore_image.png'),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 50,
+                left: 30,
               ),
-              const SizedBox(
-                height: 30,
-              ),
-              Text(
-                'Find Cozy House\nto Stay and Happy',
-                style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w500,
-                )),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Text(
-                'Stop membuang banyak waktu\npada tempat yang tidak habitable',
-                style: GoogleFonts.poppins(
-                  textStyle: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w300,
-                    color: ColorPalette.greyColor,
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 40,
-              ),
-              // ignore: sized_box_for_whitespace
-              Container(
-                width: 210,
-                height: 50,
-                child: RaisedButton(
-                  onPressed: () {},
-                  color: ColorPalette.primaryColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  child: const Text(
-                    'Explore Now',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      color: ColorPalette.whiteColor,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    height: 50,
+                    width: 50,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/logo/main_logo.png'),
+                      ),
                     ),
                   ),
-                ),
-              )
-            ],
-          ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Text(
+                    'Find Cozy House\nto Stay and Happy',
+                    style: GoogleFonts.poppins(
+                        textStyle: const TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w500,
+                    )),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'Stop membuang banyak waktu\npada tempat yang tidak habitable',
+                    style: GoogleFonts.poppins(
+                      textStyle: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w300,
+                        color: ColorPalette.greyColor,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  // ignore: sized_box_for_whitespace
+                  Container(
+                    width: 210,
+                    height: 50,
+                    child: RaisedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const HomePage(),
+                          ),
+                        );
+                      },
+                      color: ColorPalette.primaryColor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: const Text(
+                        'Explore Now',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: ColorPalette.whiteColor,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
