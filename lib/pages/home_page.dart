@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ppp/c_color.dart';
 import 'package:ppp/models/dynamic_city.dart';
 import 'package:ppp/widgets/card1.dart';
+import 'package:ppp/widgets/space_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -12,6 +13,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
+        bottom: false,
         child: Padding(
           padding: EdgeInsets.symmetric(
             vertical: edge,
@@ -111,7 +113,7 @@ class HomePage extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(left: edge),
                 child: Text(
-                  'Recommended Space',
+                  'Recommended Home',
                   style: GoogleFonts.poppins(
                     textStyle: const TextStyle(
                       fontSize: 16,
@@ -119,6 +121,25 @@ class HomePage extends StatelessWidget {
                       // color: ColorPalette.greyColor,
                     ),
                   ),
+                ),
+              ),
+              const SizedBox(
+                height: 16,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: edge),
+                child: Column(
+                  children: const [
+                    Spacecard(),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Spacecard(),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Spacecard(),
+                  ],
                 ),
               ),
             ],
