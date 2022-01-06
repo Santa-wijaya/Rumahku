@@ -1,17 +1,23 @@
-// import 'dart:ui';
-
 // ignore_for_file: deprecated_member_use
-
-// import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ppp/c_color.dart';
 import 'package:ppp/widgets/facilities.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 // import 'package:ppp/models/dynamic_space.dart';
 
 class DetailPage extends StatelessWidget {
   const DetailPage({Key? key}) : super(key: key);
+
+  launchUrl(String url) async {
+    if (await canLaunch(url)) {
+      launch(url);
+    } else {
+      throw (url);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -264,9 +270,15 @@ class DetailPage extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            Image.asset(
-                              'assets/essentials/btn_maps.png',
-                              width: 40,
+                            InkWell(
+                              onTap: () {
+                                launchUrl(
+                                    'https://goo.gl/maps/SyZx2yjWB1yR6AeH8');
+                              },
+                              child: Image.asset(
+                                'assets/essentials/btn_maps.png',
+                                width: 40,
+                              ),
                             ),
                           ],
                         ),
@@ -281,7 +293,9 @@ class DetailPage extends StatelessWidget {
                         height: 50,
                         width: MediaQuery.of(context).size.width - (2 * edge),
                         child: RaisedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            launchUrl('tel:+6281338298898');
+                          },
                           color: ColorPalette.primaryColor,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(17),
