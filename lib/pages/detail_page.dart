@@ -1,8 +1,13 @@
 // import 'dart:ui';
 
+// ignore_for_file: deprecated_member_use
+
+// import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ppp/c_color.dart';
+import 'package:ppp/widgets/facilities.dart';
 // import 'package:ppp/models/dynamic_space.dart';
 
 class DetailPage extends StatelessWidget {
@@ -11,6 +16,7 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorPalette.whiteColor,
       body: SafeArea(
         bottom: false,
         child: Stack(
@@ -20,30 +26,6 @@ class DetailPage extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               height: 350,
               fit: BoxFit.cover,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: edge,
-                vertical: 30,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  InkWell(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: Image.asset(
-                      'assets/essentials/btn_back.png',
-                      width: 40,
-                    ),
-                  ),
-                  Image.asset(
-                    'assets/essentials/btn_love.png',
-                    width: 40,
-                  ),
-                ],
-              ),
             ),
             ListView(
               children: [
@@ -60,10 +42,12 @@ class DetailPage extends StatelessWidget {
                     color: ColorPalette.whiteColor,
                   ),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const SizedBox(
                         height: 30,
                       ),
+                      //Title Start
                       Padding(
                         padding: EdgeInsets.symmetric(
                           horizontal: edge,
@@ -114,17 +98,29 @@ class DetailPage extends StatelessWidget {
                                   'assets/icons/icon_star.png',
                                   width: 20,
                                 ),
-                                Image.asset(
-                                  'assets/icons/icon_star.png',
-                                  width: 20,
+                                const SizedBox(
+                                  width: 2,
                                 ),
                                 Image.asset(
                                   'assets/icons/icon_star.png',
                                   width: 20,
                                 ),
+                                const SizedBox(
+                                  width: 2,
+                                ),
                                 Image.asset(
                                   'assets/icons/icon_star.png',
                                   width: 20,
+                                ),
+                                const SizedBox(
+                                  width: 2,
+                                ),
+                                Image.asset(
+                                  'assets/icons/icon_star.png',
+                                  width: 20,
+                                ),
+                                const SizedBox(
+                                  width: 2,
                                 ),
                                 Image.asset(
                                   'assets/icons/icon_star.png',
@@ -136,10 +132,202 @@ class DetailPage extends StatelessWidget {
                           ],
                         ),
                       ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: edge),
+                        child: Text(
+                          'Main Facilities',
+                          style: GoogleFonts.poppins(
+                            textStyle: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 12,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: edge,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            Facility(
+                              name: 'Kitchen',
+                              imageUrl: 'assets/icons/icon_bar.png',
+                              total: 2,
+                            ),
+                            Facility(
+                              name: 'Beds',
+                              imageUrl: 'assets/icons/icon_bed.png',
+                              total: 2,
+                            ),
+                            Facility(
+                              name: 'bathroom',
+                              imageUrl: 'assets/icons/icon_lemari.png',
+                              total: 2,
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: edge),
+                        child: Text(
+                          'Photo',
+                          style: GoogleFonts.poppins(
+                            textStyle: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 12,
+                      ),
+                      // ignore: sized_box_for_whitespace
+                      Container(
+                        height: 88,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            const SizedBox(
+                              width: 24,
+                            ),
+                            Image.asset(
+                              'assets/images/photo1.png',
+                              width: 110,
+                              height: 88,
+                              fit: BoxFit.cover,
+                            ),
+                            const SizedBox(
+                              width: 18,
+                            ),
+                            Image.asset(
+                              'assets/images/photo2.png',
+                              width: 110,
+                              height: 88,
+                              fit: BoxFit.cover,
+                            ),
+                            const SizedBox(
+                              width: 18,
+                            ),
+                            Image.asset(
+                              'assets/images/photo3.png',
+                              width: 110,
+                              height: 88,
+                              fit: BoxFit.cover,
+                            ),
+                            const SizedBox(
+                              width: 24,
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: edge),
+                        child: Text(
+                          'Location',
+                          style: GoogleFonts.poppins(
+                            textStyle: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 6,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: edge),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Jl. Binaria, Anturan, Lovina,\nKabupaten Buleleng, Bali 81152',
+                              style: GoogleFonts.poppins(
+                                textStyle: const TextStyle(
+                                  fontSize: 14,
+                                  color: ColorPalette.greyColor,
+                                ),
+                              ),
+                            ),
+                            Image.asset(
+                              'assets/essentials/btn_maps.png',
+                              width: 40,
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 40,
+                      ),
+                      Container(
+                        margin: EdgeInsets.symmetric(
+                          horizontal: edge,
+                        ),
+                        height: 50,
+                        width: MediaQuery.of(context).size.width - (2 * edge),
+                        child: RaisedButton(
+                          onPressed: () {},
+                          color: ColorPalette.primaryColor,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(17),
+                          ),
+                          child: Text(
+                            'Book Now',
+                            style: GoogleFonts.poppins(
+                                textStyle: const TextStyle(
+                              fontSize: 18,
+                              color: ColorPalette.whiteColor,
+                              fontWeight: FontWeight.w500,
+                            )),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 40,
+                      ),
                     ],
                   ),
                 ),
               ],
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: edge,
+                vertical: 30,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Image.asset(
+                      'assets/essentials/btn_back.png',
+                      width: 40,
+                    ),
+                  ),
+                  Image.asset(
+                    'assets/essentials/btn_love.png',
+                    width: 40,
+                  ),
+                ],
+              ),
             ),
           ],
         ),
