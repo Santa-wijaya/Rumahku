@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ppp/c_color.dart';
 import 'package:ppp/models/dynamic_city.dart';
+import 'package:ppp/models/dynamic_space.dart';
 import 'package:ppp/widgets/card1.dart';
 import 'package:ppp/widgets/space_card.dart';
+import 'package:ppp/widgets/tips_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -127,18 +129,80 @@ class HomePage extends StatelessWidget {
                 height: 16,
               ),
               Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: edge,
+                ),
+                child: Column(
+                  children: [
+                    Spacecard(
+                      Space(
+                        id: 1,
+                        name: 'Yamai Hoase',
+                        imageurlUrl: 'assets/images/space1.png',
+                        price: 130,
+                        city: 'Oasee',
+                        country: 'Denmark',
+                        rating: 4,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    Spacecard(
+                      Space(
+                        id: 2,
+                        name: 'Antasena Cour',
+                        imageurlUrl: 'assets/images/space2.png',
+                        price: 240,
+                        city: 'Jimbaran',
+                        country: 'Bali',
+                        rating: 4,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    Spacecard(
+                      Space(
+                        id: 3,
+                        name: 'Komisan Home',
+                        imageurlUrl: 'assets/images/space3.png',
+                        price: 110,
+                        city: 'Tokinawa',
+                        country: 'Japanese',
+                        rating: 5,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              // Note Guidance
+              const SizedBox(
+                height: 30,
+              ),
+              Padding(
                 padding: EdgeInsets.only(left: edge),
+                child: Text(
+                  'Tips And Guidance',
+                  style: GoogleFonts.poppins(
+                    textStyle: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      // color: ColorPalette.greyColor,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 16,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: edge,
+                ),
                 child: Column(
                   children: const [
-                    Spacecard(),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    Spacecard(),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    Spacecard(),
+                    TipsCard(),
                   ],
                 ),
               ),

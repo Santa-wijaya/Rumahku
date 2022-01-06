@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ppp/c_color.dart';
+import 'package:ppp/models/dynamic_space.dart';
+// import 'package:ppp/models/dynamic_space.dart';
 // import 'package:ppp/models/dynamic_city.dart';
 
 class Spacecard extends StatelessWidget {
-  const Spacecard({Key? key}) : super(key: key);
+  // const Spacecard({Key? key}) : super(key: key);
+  final Space space;
+
+  // ignore: prefer_const_constructors_in_immutables, use_key_in_widget_constructors
+  const Spacecard(this.space);
 
   @override
   Widget build(BuildContext context) {
@@ -12,13 +18,14 @@ class Spacecard extends StatelessWidget {
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(18),
+          // ignore: sized_box_for_whitespace
           child: Container(
             width: 130,
             height: 110,
             child: Stack(
               children: [
                 Image.asset(
-                  'assets/images/space1.png',
+                  space.imageurlUrl,
                 ),
                 Align(
                   alignment: Alignment.topRight,
@@ -41,7 +48,7 @@ class Spacecard extends StatelessWidget {
                             color: ColorPalette.secondaryColor,
                           ),
                           Text(
-                            '4/5',
+                            '${space.rating}/5',
                             style: GoogleFonts.poppins(
                                 textStyle: const TextStyle(
                               fontSize: 13,
@@ -65,7 +72,7 @@ class Spacecard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Yamai House',
+              space.name,
               style: GoogleFonts.poppins(
                 textStyle: const TextStyle(
                   fontSize: 18,
@@ -78,7 +85,7 @@ class Spacecard extends StatelessWidget {
             ),
             Text.rich(
               TextSpan(
-                text: '\$52',
+                text: '\$${space.price}',
                 style: GoogleFonts.poppins(
                   textStyle: const TextStyle(
                     fontSize: 16,
@@ -101,7 +108,7 @@ class Spacecard extends StatelessWidget {
               height: 16,
             ),
             Text(
-              'Jimbaran, Bali',
+              '${space.city}, ${space.country}',
               style: GoogleFonts.poppins(
                 textStyle: const TextStyle(
                   color: ColorPalette.greyColor,
