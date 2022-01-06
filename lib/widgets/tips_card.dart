@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ppp/c_color.dart';
+import 'package:ppp/models/dynamic_guidance.dart';
 
 class TipsCard extends StatelessWidget {
-  const TipsCard({Key? key}) : super(key: key);
+  // const TipsCard({Key? key}) : super(key: key);
+
+  final Tips tips;
+
+  // ignore: use_key_in_widget_constructors
+  const TipsCard(this.tips);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +17,7 @@ class TipsCard extends StatelessWidget {
     return Row(
       children: [
         Image.asset(
-          'assets/icons/icon_guidance.png',
+          tips.imageUrl,
           width: 80,
         ),
         const SizedBox(
@@ -21,7 +27,7 @@ class TipsCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Home Guideline',
+              tips.title,
               style: GoogleFonts.poppins(
                 textStyle: const TextStyle(
                   fontSize: 18,
@@ -33,7 +39,7 @@ class TipsCard extends StatelessWidget {
               height: 4,
             ),
             Text(
-              'Updated 20 Apr',
+              tips.updateAt,
               style: GoogleFonts.poppins(
                 textStyle: const TextStyle(
                   fontSize: 14,
