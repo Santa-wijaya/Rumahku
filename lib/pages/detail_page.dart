@@ -1,21 +1,32 @@
 // ignore_for_file: deprecated_member_use
 
+// ignore: avoid_web_libraries_in_flutter
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ppp/c_color.dart';
+import 'package:ppp/pages/error_page.dart';
 import 'package:ppp/widgets/facilities.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // import 'package:ppp/models/dynamic_space.dart';
 
+// ignore: use_key_in_widget_constructors
 class DetailPage extends StatelessWidget {
-  const DetailPage({Key? key}) : super(key: key);
+  // const DetailPage({Key? key}) : super(key: key);
 
   launchUrl(String url) async {
     if (await canLaunch(url)) {
       launch(url);
     } else {
-      throw (url);
+      // throw (url);
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const Errorpage(),
+        ),
+      );
     }
   }
 
