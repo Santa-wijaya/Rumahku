@@ -69,7 +69,7 @@ flutter:
     - assets/icons/icon_love_solid.png
     - assets/icons/icon_mail_solid.png
     - assets/icons/icon_card_solid.png
-    - assets/icons/icon_star.png
+    # - assets/icons/icon_star.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
