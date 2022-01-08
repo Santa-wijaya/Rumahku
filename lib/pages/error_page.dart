@@ -5,7 +5,7 @@
 import 'package:flutter/material.dart';
 // import 'package:google_fonts/google_fonts.dart';
 import 'package:ppp/c_color.dart';
-import 'package:ppp/pages/splash_screen.dart';
+// import 'package:ppp/pages/splash_screen.dart';
 
 class Errorpage extends StatelessWidget {
   const Errorpage({Key? key}) : super(key: key);
@@ -68,7 +68,8 @@ class Errorpage extends StatelessWidget {
                   ),
                   child: const Text(
                     'Back To Home',
-                    style: TextStyle(color: ColorPalette.whiteColor),
+                    style:
+                        TextStyle(color: ColorPalette.whiteColor, fontSize: 18),
                   ),
                 ),
               ),
