@@ -65,6 +65,7 @@ flutter:
     - assets/logo/
     - assets/icons/
     - assets/essentials/
+    - assets/illustrations/
     - assets/icons/icon_home_solid.png
     - assets/icons/icon_love_solid.png
     - assets/icons/icon_mail_solid.png

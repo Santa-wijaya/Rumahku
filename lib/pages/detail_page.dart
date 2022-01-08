@@ -1,14 +1,12 @@
 // ignore_for_file: deprecated_member_use
 
-// ignore: avoid_web_libraries_in_flutter
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ppp/c_color.dart';
-import 'package:ppp/pages/error_page.dart';
+// import 'package:ppp/pages/error_page.dart';
 import 'package:ppp/widgets/facilities.dart';
 import 'package:url_launcher/url_launcher.dart';
+// import 'package:path/path.dart';
 
 // import 'package:ppp/models/dynamic_space.dart';
 
@@ -20,13 +18,13 @@ class DetailPage extends StatelessWidget {
     if (await canLaunch(url)) {
       launch(url);
     } else {
-      // throw (url);
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const Errorpage(),
-        ),
-      );
+      throw (url);
+      // Navigator.push(
+      //   context,
+      //   MaterialPageRoute(
+      //     builder: (context) => const Errorpage(),
+      //   ),
+      // );
     }
   }
 
@@ -283,8 +281,7 @@ class DetailPage extends StatelessWidget {
                             ),
                             InkWell(
                               onTap: () {
-                                launchUrl(
-                                    'https://goo.gl/maps/SyZx2yjWB1yR6AeH8');
+                                launchUrl('www.google.com');
                               },
                               child: Image.asset(
                                 'assets/essentials/btn_maps.png',
